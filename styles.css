@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Satisfy', cursive;
+}
+
+body {
+  overflow: hidden;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: -100vh;
+  background: #13183E;
+}
+
+section .box {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border: none;
+  border-radius: 100%;
+}
+
+section a {
+  position: absolute;
+  top: 80%;
+  right: 57.5%;
+}
+
+section button {
+  width: 300px;
+  height: 100px;
+  border: none;
+  color: wheat;
+  border-radius: 4px;
+  transition: ease-out 0.3s;
+  font-size: 2rem;
+  outline: none;
+  border: 3px solid wheat;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+}
+
+button:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #5B4C2E;
+}
+
+button:hover:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+section .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 500%;
+  height: 100%;
+  background: linear-gradient(to right, #E8DDC4, transparent);
+  opacity: 0.05;
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+
+section .box .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #5B4C2E, #E8DDC4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+section .box .circle::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: linear-gradient(315deg, #CFAE7B, #E8DDC4);
+  border-radius: 50%;
+}
+
+section .box .circle h2 {
+  position: absolute;
+  z-index: 2;
+  font-size: 4em;
+  color: #5B4C2E;
+  text-align: center;
+}
+
+section i {
+  position: absolute;
+  background-color: #FFD600;
+  box-shadow: 0 0 40px #FFD600;
+  border-radius: 100%;
+  animation: animate linear infinite;
+}
+
+section i:nth-child(even) {
+  background-color: #FFD600;
+  box-shadow: 0 0 40px #FFD600;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-2000%);
+    opacity: 0;
+  }
+}
